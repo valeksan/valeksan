@@ -34,10 +34,6 @@
 
 ---
 
-<img align="left" alt="codeSTACKr's Github Stats" src="https://github-readme-stats.vercel.app/api?username=valeksan&show_icons=true&hide_border=true" />
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=valeksan&hide=jupyter,css,scss,html,makefile,dockerfile,shell,cmake)](https://github.com/anuraghazra/github-readme-stats)
-
 [x]: https://x.com/bruce40672951
 [linkedin]: https://www.linkedin.com/in/vitalii-aleksashin-30250720a/
 [facebook]: https://facebook.com/vitalii.aleks.shin
