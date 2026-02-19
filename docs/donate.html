@@ -280,7 +280,7 @@
 
     <footer>
         <p data-i18n="footer_thanks">Спасибо за поддержку! 🙏</p>
-        <p><a href="https://github.com/valeksan" data-i18n="footer_back">← Вернуться на GitHub</a></p>
+        <p><a href="#" id="back-link" data-i18n="footer_back">← Вернуться</a></p>
     </footer>
 
     <!-- Библиотека для QR-кодов -->
@@ -405,10 +405,57 @@
     })();
 
     /**
+     * Определяет, куда должна вести кнопка "Back to GitHub".
+     * Приоритет: URL-параметр → document.referrer → профиль
+     * @returns {string} URL для возврата
+     */
+    function getBackUrl() {
+        // 1. Проверяем параметр ?repo=owner/repo в URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const repoParam = urlParams.get('repo');
+        
+        if (repoParam) {
+            return `https://github.com/${repoParam}`;
+        }
+        
+        // 2. Пытаемся использовать referrer (если пользователь пришёл с GitHub)
+        const referrer = document.referrer;
+        if (referrer && referrer.includes('github.com')) {
+            // Извлекаем базовый URL репозитория (без blob/tree/etc)
+            try {
+                const url = new URL(referrer);
+                const pathParts = url.pathname.split('/').filter(Boolean);
+                if (pathParts.length >= 2) {
+                    return `https://github.com/${pathParts[0]}/${pathParts[1]}`;
+                }
+            } catch (e) {
+                console.warn('Failed to parse referrer:', e);
+            }
+        }
+        
+        // 3. Fallback: профиль автора
+        return 'https://github.com/valeksan';
+    }
+
+    /**
      * Основной скрипт страницы
      */
     document.addEventListener('DOMContentLoaded', () => {
         I18n.init();
+
+        // Настройка кнопки "Back to GitHub"
+        const backLink = document.getElementById('back-link');
+        if (backLink) {
+            backLink.href = getBackUrl();
+            
+            // Если referrer с того же домена GitHub, открываем в том же окне
+            if (document.referrer.includes('github.com')) {
+                backLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = backLink.href;
+                });
+            }
+        }
 
         // Реальные адреса кошельков
         const wallets = {
