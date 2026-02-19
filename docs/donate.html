@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="page_title">💙 Поддержать проект | valeksan</title>
     <style>
-        /* === Базовые стили === */
+        /* === CSS переменные === */
         :root {
             --primary: #0366d6;
             --primary-hover: #0255b3;
@@ -15,6 +15,8 @@
             --text: #333;
             --text-muted: #666;
             --border: #eee;
+            --btc-orange: #f7931a;
+            --ltc-gray: #345d9d;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -78,7 +80,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 0.75rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             word-break: break-all;
             border: 1px solid var(--border);
         }
@@ -122,7 +124,7 @@
             text-transform: uppercase;
         }
         .badge-recommended { background: #dcfce7; color: #166534; }
-        .badge-large { background: #ffedd5; color: #9a3412; }
+        .badge-alt { background: #e0e7ff; color: #3730a3; }
         
         /* === Ссылки и футер === */
         a { color: var(--primary); text-decoration: none; }
@@ -134,6 +136,11 @@
             margin-top: 2.5rem;
             padding-top: 1rem;
             border-top: 1px solid var(--border);
+        }
+        
+        /* === Скрытие крипто-карточек для RU === */
+        html[lang="ru"] .crypto-card {
+            display: none !important;
         }
         
         /* === Адаптив === */
@@ -155,56 +162,120 @@
     <h1 data-i18n="page_title">💙 Поддержать проект</h1>
     <p data-i18n="intro_text">Спасибо, что рассматриваешь возможность поддержки! Выбери удобный способ:</p>
 
-    <!-- TRC-20 Block -->
-    <div class="card">
+    <!-- === КРИПТО-КАРТОЧКИ (видны только для EN) === -->
+    
+    <!-- USDT TRC-20 -->
+    <div class="card crypto-card">
         <h2>
             <span data-i18n="trc20_title">🟢 USDT (TRC-20)</span>
-            <span class="badge badge-recommended" data-i18n="badge_recommended">Рекомендую</span>
+            <span class="badge badge-recommended" data-i18n="badge_recommended">Recommended</span>
         </h2>
         <p>
-            <strong data-i18n="trc20_fee_label">Комиссия:</strong> <span data-i18n="trc20_fee_value">~$1</span> | 
-            <strong data-i18n="trc20_speed_label">Скорость:</strong> <span data-i18n="trc20_speed_value">1–3 мин</span>
+            <strong data-i18n="trc20_fee_label">Fee:</strong> <span data-i18n="trc20_fee_value">~$1</span> | 
+            <strong data-i18n="trc20_speed_label">Speed:</strong> <span data-i18n="trc20_speed_value">1–3 min</span>
         </p>
         
         <div class="qr-container" id="qr-trc20"></div>
         
         <div class="address">
             <span id="addr-trc20">TDcUqHnzLFbB6vzZ1sVbSfV8QQp2ysESoo</span>
-            <button class="copy-btn" data-target="addr-trc20" data-i18n="btn_copy">Копировать</button>
+            <button class="copy-btn" data-target="addr-trc20" data-i18n="btn_copy">Copy</button>
         </div>
         <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.5rem;" data-i18n="trc20_tip">
-            💡 Совет: используй эту сеть для сумм до $1000 — комиссии минимальны.
+            💡 Tip: Use this network for amounts under $1000 — minimal fees.
         </p>
     </div>
 
-    <!-- ERC-20 Block -->
-    <div class="card">
+    <!-- USDT ERC-20 -->
+    <div class="card crypto-card">
         <h2>
             <span data-i18n="erc20_title">🔵 USDT (ERC-20)</span>
-            <span class="badge badge-large" data-i18n="badge_large">Для крупных сумм</span>
+            <span class="badge badge-recommended" data-i18n="badge_large">For large amounts</span>
         </h2>
         <p>
-            <strong data-i18n="erc20_fee_label">Комиссия:</strong> <span data-i18n="erc20_fee_value">$5–20</span> | 
-            <strong data-i18n="erc20_speed_label">Скорость:</strong> <span data-i18n="erc20_speed_value">5–15 мин</span>
+            <strong data-i18n="erc20_fee_label">Fee:</strong> <span data-i18n="erc20_fee_value">$5–20</span> | 
+            <strong data-i18n="erc20_speed_label">Speed:</strong> <span data-i18n="erc20_speed_value">5–15 min</span>
         </p>
         
         <div class="qr-container" id="qr-erc20"></div>
         
         <div class="address">
             <span id="addr-erc20">0x77532a1a5d04e405f68376e659e9633a42e69d03</span>
-            <button class="copy-btn" data-target="addr-erc20" data-i18n="btn_copy">Копировать</button>
+            <button class="copy-btn" data-target="addr-erc20" data-i18n="btn_copy">Copy</button>
         </div>
         <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.5rem;" data-i18n="erc20_warning">
-            ⚠️ Важно: для отправки нужен ETH на балансе для оплаты газа.
+            ⚠️ Note: You need ETH in your wallet to pay for gas.
         </p>
     </div>
 
-    <!-- Other Methods -->
-    <div class="card">
-        <h2 data-i18n="other_methods_title">🔄 Другие способы</h2>
+    <!-- Bitcoin -->
+    <div class="card crypto-card">
+        <h2>
+            <span data-i18n="btc_title">🟠 Bitcoin (BTC)</span>
+            <span class="badge badge-alt" data-i18n="badge_alt">Alternative</span>
+        </h2>
+        <p>
+            <strong data-i18n="btc_fee_label">Fee:</strong> <span data-i18n="btc_fee_value">$1–10</span> | 
+            <strong data-i18n="btc_speed_label">Speed:</strong> <span data-i18n="btc_speed_value">10–60 min</span>
+        </p>
+        
+        <div class="qr-container" id="qr-btc"></div>
+        
+        <div class="address">
+            <span id="addr-btc">bc1qpk6asjrvcy6g9vxwup8yellzt7r0qw7pjuk3xs</span>
+            <button class="copy-btn" data-target="addr-btc" data-i18n="btn_copy">Copy</button>
+        </div>
+        <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.5rem;" data-i18n="btc_tip">
+            💡 Tip: Use SegWit addresses (starting with bc1) for lower fees.
+        </p>
+    </div>
+
+    <!-- Litecoin -->
+    <div class="card crypto-card">
+        <h2>
+            <span data-i18n="ltc_title">⚪ Litecoin (LTC)</span>
+            <span class="badge badge-alt" data-i18n="badge_alt">Alternative</span>
+        </h2>
+        <p>
+            <strong data-i18n="ltc_fee_label">Fee:</strong> <span data-i18n="ltc_fee_value">&lt;$0.1</span> | 
+            <strong data-i18n="ltc_speed_label">Speed:</strong> <span data-i18n="ltc_speed_value">5–30 min</span>
+        </p>
+        
+        <div class="qr-container" id="qr-ltc"></div>
+        
+        <div class="address">
+            <span id="addr-ltc">ltc1qjzgf6tlstjgkfkc2k6x4lmkmd6pgmk00gz0wdp</span>
+            <button class="copy-btn" data-target="addr-ltc" data-i18n="btn_copy">Copy</button>
+        </div>
+        <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.5rem;" data-i18n="ltc_tip">
+            💡 Tip: LTC is great for small amounts — minimal fees.
+        </p>
+    </div>
+
+    <!-- === БЛОК ДЛЯ RU (виден только когда выбран русский) === -->
+    <div class="card" id="ru-only-card">
+        <h2 data-i18n="ru_only_title">🇷🇺 Для пользователей из России</h2>
+        <p data-i18n="ru_only_text">
+            Используйте <strong>Boosty</strong> — это самый удобный способ поддержки.
+            Принимаются карты РФ, СБП, а также зарубежные карты.
+        </p>
+        <div style="text-align:center;margin-top:1rem;">
+            <a href="https://boosty.to/valeksan/donate" 
+               target="_blank" 
+               rel="noopener"
+               style="display:inline-block;background:var(--primary);color:white;padding:0.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;"
+               data-i18n="ru_only_btn">
+                Перейти к донату на Boosty
+            </a>
+        </div>
+    </div>
+
+    <!-- === БЛОК ДЛЯ EN (виден только когда выбран английский) === -->
+    <div class="card" id="en-only-card">
+        <h2 data-i18n="en_only_title">💳 Other Payment Methods</h2>
         <ul style="padding-left:1.2rem;">
-            <li><a href="https://boosty.to/valeksan/donate" target="_blank" rel="noopener">🇷🇺 Boosty (<span data-i18n="boosty_desc">карты РФ, СБП</span>)</a></li>
-            <li><a href="https://github.com/valeksan" target="_blank" rel="noopener">📦 GitHub Sponsors (<span data-i18n="gh_sponsors_desc">если доступен</span>)</a></li>
+            <li><a href="https://boosty.to/valeksan/donate" target="_blank" rel="noopener">🇷🇺 Boosty (RU cards, SBP, international cards)</a></li>
+            <li><a href="https://github.com/valeksan" target="_blank" rel="noopener">📦 GitHub Sponsors (if available in your region)</a></li>
         </ul>
     </div>
 
@@ -219,40 +290,25 @@
     <!-- Логика i18n и функционал страницы -->
     <script>
     /**
-     * Модуль поддержки двух языков (RU/EN) для страницы донатов.
-     * Включает: словарь переводов, детектор языка, переключатель, обновление DOM.
+     * Модуль поддержки двух языков (RU/EN) с управлением видимостью контента.
+     * Для RU: показывает только Boosty
+     * Для EN: показывает криптовалюты + альтернативы
      */
     const I18n = (() => {
-        // === Словарь переводов ===
         const translations = {
             ru: {
                 page_title: "💙 Поддержать проект | valeksan",
                 intro_text: "Спасибо, что рассматриваешь возможность поддержки! Выбери удобный способ:",
-                trc20_title: "🟢 USDT (TRC-20)",
-                badge_recommended: "Рекомендую",
-                trc20_fee_label: "Комиссия:",
-                trc20_fee_value: "~$1",
-                trc20_speed_label: "Скорость:",
-                trc20_speed_value: "1–3 мин",
-                trc20_tip: "💡 Совет: используй эту сеть для сумм до $1000 — комиссии минимальны.",
-                erc20_title: "🔵 USDT (ERC-20)",
-                badge_large: "Для крупных сумм",
-                erc20_fee_label: "Комиссия:",
-                erc20_fee_value: "$5–20",
-                erc20_speed_label: "Скорость:",
-                erc20_speed_value: "5–15 мин",
-                erc20_warning: "⚠️ Важно: для отправки нужен ETH на балансе для оплаты газа.",
-                other_methods_title: "🔄 Другие способы",
-                boosty_desc: "карты РФ, СБП",
-                gh_sponsors_desc: "если доступен",
+                ru_only_title: "🇷🇺 Для пользователей из России",
+                ru_only_text: "Используйте Boosty — это самый удобный способ поддержки. Принимаются карты РФ, СБП, а также зарубежные карты.",
+                ru_only_btn: "Перейти к донату на Boosty",
                 footer_thanks: "Спасибо за поддержку! 🙏",
-                footer_back: "← Вернуться на GitHub",
-                btn_copy: "Копировать",
-                btn_copied: "Скопировано!"
+                footer_back: "← Вернуться на GitHub"
             },
             en: {
                 page_title: "💙 Support the Project | valeksan",
                 intro_text: "Thank you for considering support! Choose your preferred method:",
+                en_only_title: "💳 Other Payment Methods",
                 trc20_title: "🟢 USDT (TRC-20)",
                 badge_recommended: "Recommended",
                 trc20_fee_label: "Fee:",
@@ -267,9 +323,19 @@
                 erc20_speed_label: "Speed:",
                 erc20_speed_value: "5–15 min",
                 erc20_warning: "⚠️ Note: You need ETH in your wallet to pay for gas.",
-                other_methods_title: "🔄 Other Methods",
-                boosty_desc: "RU cards, SBP",
-                gh_sponsors_desc: "if available",
+                btc_title: "🟠 Bitcoin (BTC)",
+                badge_alt: "Alternative",
+                btc_fee_label: "Fee:",
+                btc_fee_value: "$1–10",
+                btc_speed_label: "Speed:",
+                btc_speed_value: "10–60 min",
+                btc_tip: "💡 Tip: Use SegWit addresses (starting with bc1) for lower fees.",
+                ltc_title: "⚪ Litecoin (LTC)",
+                ltc_fee_label: "Fee:",
+                ltc_fee_value: "<$0.1",
+                ltc_speed_label: "Speed:",
+                ltc_speed_value: "5–30 min",
+                ltc_tip: "💡 Tip: LTC is great for small amounts — minimal fees.",
                 footer_thanks: "Thank you for your support! 🙏",
                 footer_back: "← Back to GitHub",
                 btn_copy: "Copy",
@@ -277,31 +343,20 @@
             }
         };
 
-        // === Текущий язык ===
         let currentLang = 'ru';
 
-        /**
-         * Определяет предпочтительный язык пользователя.
-         * @returns {'ru'|'en'}
-         */
         function detectLanguage() {
             const saved = localStorage.getItem('donate_lang');
             if (saved && translations[saved]) return saved;
-            
             const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
             if (browserLang.startsWith('ru')) return 'ru';
-            return 'en'; // fallback
+            return 'en';
         }
 
-        /**
-         * Применяет переводы ко всем элементам с data-i18n.
-         * @param {string} lang - Код языка ('ru' или 'en')
-         */
         function applyTranslations(lang) {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (translations[lang][key]) {
-                    // Особая обработка для title страницы
                     if (el.tagName === 'TITLE') {
                         document.title = translations[lang][key];
                     } else {
@@ -309,34 +364,38 @@
                     }
                 }
             });
-            // Обновляем HTML lang атрибут
             document.documentElement.lang = lang;
+            
+            // Управление видимостью блоков
+            const ruCard = document.getElementById('ru-only-card');
+            const enCard = document.getElementById('en-only-card');
+            const cryptoCards = document.querySelectorAll('.crypto-card');
+            
+            if (lang === 'ru') {
+                if (ruCard) ruCard.style.display = 'block';
+                if (enCard) enCard.style.display = 'none';
+                cryptoCards.forEach(card => card.style.display = 'none');
+            } else {
+                if (ruCard) ruCard.style.display = 'none';
+                if (enCard) enCard.style.display = 'block';
+                cryptoCards.forEach(card => card.style.display = 'block');
+            }
         }
 
-        /**
-         * Переключает язык и сохраняет выбор.
-         * @param {string} lang - Код языка
-         */
         function setLanguage(lang) {
             if (!translations[lang]) return;
             currentLang = lang;
             localStorage.setItem('donate_lang', lang);
             applyTranslations(lang);
-            // Обновляем активную кнопку
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
         }
 
-        /**
-         * Публичный API модуля
-         */
         return {
             init: () => {
                 const lang = detectLanguage();
                 setLanguage(lang);
-                
-                // Обработчики кнопок переключения
                 document.querySelectorAll('.lang-btn').forEach(btn => {
                     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
                 });
@@ -347,22 +406,22 @@
     })();
 
     /**
-     * Основной скрипт страницы: инициализация QR, копирование, i18n.
+     * Основной скрипт страницы
      */
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. Инициализация системы переводов
         I18n.init();
 
-        // 2. Генерация QR-кодов
+        // Реальные адреса кошельков
         const wallets = {
             'qr-trc20': 'TDcUqHnzLFbB6vzZ1sVbSfV8QQp2ysESoo',
-            'qr-erc20': '0x77532a1a5d04e405f68376e659e9633a42e69d03'
+            'qr-erc20': '0x77532a1a5d04e405f68376e659e9633a42e69d03',
+            'qr-btc': 'bc1qpk6asjrvcy6g9vxwup8yellzt7r0qw7pjuk3xs',
+            'qr-ltc': 'ltc1qjzgf6tlstjgkfkc2k6x4lmkmd6pgmk00gz0wdp'
         };
 
         for (const [containerId, address] of Object.entries(wallets)) {
             const container = document.getElementById(containerId);
             if (container) {
-                // Очищаем контейнер на случай повторной инициализации
                 container.innerHTML = '';
                 new QRCode(container, {
                     text: address,
@@ -373,7 +432,6 @@
             }
         }
 
-        // 3. Обработчик кнопок копирования
         document.querySelectorAll('.copy-btn').forEach(btn => {
             btn.addEventListener('click', async (e) => {
                 const targetId = e.currentTarget.dataset.target;
@@ -384,8 +442,6 @@
 
                 try {
                     await navigator.clipboard.writeText(address);
-                    
-                    // Визуальная обратная связь с учетом языка
                     const originalText = e.currentTarget.textContent;
                     const copiedText = I18n.get('btn_copied');
                     
