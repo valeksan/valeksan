@@ -10,7 +10,6 @@
 [<img align="left" alt="vitalii-aleksashin-30250720a | Linkedin" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/linkedin.svg" />][linkedin]
 [<img align="left" alt="bruce40672951 | X" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/x.svg" />][x]
 [<img align="left" alt="vitaljax | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/instagram.svg" />][instagram]
-[<img align="left" alt="vitalii.aleks.shin | Facebook" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/facebook.svg" />][facebook]
 
 <br />
 
