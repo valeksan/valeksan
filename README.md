@@ -1,4 +1,4 @@
-### Hi there, I'm Vitalii Aleksashin - aka valeksan 👋
+### Hi there, I'm Vitalii - aka valeksan 👋
 
 ## I'm a Developer!
 - 🔭 I’m currently working at JSC Research Institute of Electronic Devices
