@@ -1,35 +1,45 @@
-### Hi there, I'm Vitalii - aka valeksan 👋
+# Hi, I'm Vitalii Aleksashin 👋
 
-## I'm a Developer!
-- 🔭 I’m currently working at JSC Research Institute of Electronic Devices
-- 🥅 2025: Completed the Yandex Practicum Data Science Plus training course (because I like this area).
-- ⚡ Fun fact: I've been writing the client side in the C++ programming language for a long time, damn the day I started doing it! (no funny for me).
+**C++ Developer | Data Science Enthusiast**
 
-### Connect with me:
-[<img align="left" alt="valeksanv | Telegram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/telegram.svg" />][telegram]
-[<img align="left" alt="vitalii-aleksashin-30250720a | Linkedin" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/linkedin.svg" />][linkedin]
-[<img align="left" alt="bruce40672951 | X" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/x.svg" />][x]
-[<img align="left" alt="vitaljax | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v10.3/icons/instagram.svg" />][instagram]
-
-<br />
-
-### Languages and Tools:
-<img align="left" alt="C++" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/cpp/cpp.png" />
-<img align="left" alt="C" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/c/c.png" />
-<img align="left" alt="Python" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />
-<img align="left" alt="SQL" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" />
-<img align="left" alt="Qt" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/qt/qt.png" />
-<img align="left" alt="Bash" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/bash/bash.png" />
-<img align="left" alt="JavaScript" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
-<img align="left" alt="HTML5" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
-
-<br />
-<br />
+Software developer at [JSC Research Institute of Electronic Devices](https://github.com/valeksan), specializing in C++ client-side development. Passionate about building reliable desktop applications and exploring machine learning.
 
 ---
 
-[x]: https://x.com/bruce40672951
-[linkedin]: https://www.linkedin.com/in/vitalii-aleksashin-30250720a/
-[facebook]: https://facebook.com/vitalii.aleks.shin
-[instagram]: https://www.instagram.com/vitaljax/
-[telegram]: https://t.me/valeksanv/
+## What I Do
+
+- **Day job**: C++ desktop application development (Qt, cross-platform)
+- **Side projects**: Machine learning, data analysis, system tooling
+- **2025**: Completed Yandex Practicum Data Science Plus program
+
+---
+
+## Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Languages** | C++17, Python, SQL, Bash, JavaScript |
+| **Frameworks** | Qt 5/6, scikit-learn, CatBoost |
+| **Tools** | CMake, Git, Docker, Linux (Ubuntu) |
+| **Data** | pandas, NumPy, FAISS, SHAP, matplotlib |
+
+---
+
+## Featured Projects
+
+| Project | Description | Stack |
+|---------|-------------|-------|
+| [**hyperphoenixcv**](https://github.com/valeksan/hyperphoenixcv) | Resumable hyperparameter search for scikit-learn with SQLite persistence | Python, scikit-learn, Optuna |
+| [**CoreTemplateStd**](https://github.com/valeksan/CoreTemplateStd) | Header-only C++17 task manager with threading, grouping, and cancellation | C++17, CMake, Qt |
+| [**libhid**](https://github.com/valeksan/libhid) | Cross-platform hardware identifier library | C++, CMake |
+| [**hh-skill-parser**](https://github.com/valeksan/hh-skill-parser) | Tech skills extraction from job listings with API/HTML fallback | Python, BeautifulSoup |
+| [**opencode-skills**](https://github.com/valeksan/opencode-skills) | Cyberpunk KDE Plasma customization playbook | Bash, KDE, Conky |
+
+---
+
+## Connect
+
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=flat&logo=telegram&logoColor=white)](https://t.me/valeksanv/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitalii-aleksashin-30250720a/)
+[![X](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://x.com/bruce40672951)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/vitaljax/)
